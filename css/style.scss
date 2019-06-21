@@ -235,7 +235,7 @@ button, .button{
 }
 
 .about {
-  padding: 100px 0;
+  padding: 100px 0 371px;
   
   &__title {
     @include title;
@@ -272,6 +272,8 @@ button, .button{
 
   &__akk {
     width: 270px;
+    position: relative;
+    
 
     &-title {
       font-size: 18px;
@@ -280,6 +282,7 @@ button, .button{
       text-align: center;
       position: relative;
       padding: 1.5em 0;
+      z-index: 5;
       
       &:before {
         content: '//';
@@ -298,20 +301,29 @@ button, .button{
       font-size: 16px;
       font-family: 'signikaregular';
       text-align: center;
-      padding-bottom: 1.69em;
+      z-index: 5;
     }
 
     .transparent {
-      opacity: 0;
+      transform: rotateY(90deg);
+      
+      z-index: -1;
+      position: absolute;
+      top: 268px;
+      left: 0;
+      width: 270px;
+      background-color: #00a388;
+      
              
       &__text {
         font-size: 12px;
         font-family: 'open_sansregular';
         text-align: justify;
-        padding: 0 2.08em 2.08em;
+        padding: 9.17em 2.08em 2.08em;
         width: 227px;
         line-height: 1.5;
         background-color: transparent;
+        color: #fff;
       }
 
     &__social {
@@ -327,14 +339,210 @@ button, .button{
 
     }
 
-    &:hover,
-    &:hover .transparent{
-        background-color: #00a388; 
-        opacity: 1;
+    &:hover {
         color: #fff;
-        transition: 1s ease-in-out;
+        transition: 2.5s ease-in-out;
       }
-  }
+
+    &:hover .transparent {
+      transform: rotateY(360deg);
+      transition: 2s ease-in-out;
+    }
+    
+   }
+}
+
+.portfolio {
+  padding: 0 0 122px;
+
+  &__title {
+    @include title;
   }
 
+  &__btn {
+    @include btn-position;
+    
+    button {
+      @include btn-title;     
+    }
 
+    button + button {
+      margin-left: 5px;
+    }
+  }
+
+      &__text {
+      padding: 2.72em 0 4.61em;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-family: 'signikasemibold';
+          a + a {
+          padding-left: 13px;
+        }
+          a {
+          position: relative;
+
+          &:before {
+          content: '//';
+          padding-right: 13px;
+          }
+      }
+
+      a:first-child:before {
+        content: none;
+      }
+      
+    }
+
+    .row {
+      font-size: 0;
+      
+      .col-3 {
+        position: relative;
+      
+        &__img {
+          width: 100%;
+          }
+        
+
+        .hover {
+          transform: rotateX(90deg) rotateY(90deg) rotateZ(30deg);
+          position: absolute;
+          top: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 163, 136, 0.7);
+          z-index: 5;
+          color: #FFF;
+          display: flex;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-justify-content: center;
+                  justify-content: center;
+          -webkit-align-content: center;
+                  align-content: center;
+          -webkit-align-items: center;
+                  align-items: center;
+          
+          &__title {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: 'signikasemibold';
+          }
+
+          &__text {
+            font-size: 18px;
+            font-family: 'open_sansregular';
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1.67em 0 1.28em;
+          }
+
+          img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        &:hover .hover {
+          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+          transition: 1.5s ease-in;
+        }
+      }
+    } 
+}
+
+.services {
+  padding-bottom: 105px;
+  
+    &__title {
+    @include title;
+  }
+
+  &__btn {
+    @include btn-position;
+    
+    button {
+      @include btn-title;     
+    }
+
+    button + button {
+      margin-left: 5px;
+    }
+  }
+
+   &__title--small {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'signikaregular';
+    text-align: center;
+    padding: 1.44em 0 3.56em;
+  }
+
+  .row {
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+
+  &__item {
+    width: 46.43%;
+    padding-bottom: 80px;
+    
+    div {
+      width: 113px;
+      height: 113px;
+      background-color: #00a388;
+      
+      img {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    h4 {
+      font-size: 36px;
+      font-family: 'signikaregular';
+      padding: 0.67em 0 0.58em;
+    }
+
+    p {
+      font-size: 14px;
+      font-family: 'open_sansregular';
+      line-height: 2;
+    }
+
+    &-link {
+      display: flex;
+      -webkit-justify-content: flex-end;
+              justify-content: flex-end;
+      color: transparent;
+      font-size: 18px;
+      font-family: 'signikaregular';
+    }
+
+    &:hover &-link {
+      color: inherit;
+    }
+
+    &:hover div{
+      transform: rotateX(360deg);
+      transition: 2s ease-in;
+    }
+  }
+}
+
+.blog {
+  
+}
+
+.map {
+  img {
+    width: 100%;
+  }
+}
