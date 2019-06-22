@@ -457,13 +457,12 @@ button, .button{
 }
 
 .services {
-  padding-bottom: 105px;
   
     &__title {
     @include title;
-  }
+   }
 
-  &__btn {
+   &__btn {
     @include btn-position;
     
     button {
@@ -473,7 +472,7 @@ button, .button{
     button + button {
       margin-left: 5px;
     }
-  }
+   }
 
    &__title--small {
     font-size: 16px;
@@ -534,15 +533,243 @@ button, .button{
       transform: rotateX(360deg);
       transition: 2s ease-in;
     }
-  }
+   }
 }
 
 .blog {
+  padding: 105px 0 223px;
+  background-color: #ecfffc;
   
+  &__title {
+    @include title;
+  }
+
+  &__btn {
+    @include btn-position;
+    
+    button {
+      @include btn-title;     
+    }
+
+    button + button {
+      margin-left: 5px;
+    }
+  }
+
+  &__title--small {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'signikaregular';
+    text-align: center;
+    padding: 1.44em 0 3.56em;
+  }
+
+  .row + .row {
+    margin-top: 36px;
+  }
+
+  .col-3 {
+    min-height: 683px;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    
+
+    
+    img {
+      object-fit: cover;
+      width: 100%;
+      max-height: 325px;
+      object-position: left top;          
+    }
+
+    &__content {
+      width: 82%;
+      max-height: 325px;
+      padding: 35px 30px 30px;
+      -o-background-clip: border-box;
+         background-clip: border-box;
+      
+      a {
+        color: #00a388;
+        font-size: 17px;
+        font-family: 'Roboto Regular', Arial, sans-serif;
+      }
+
+      h4 {
+        font-size: 28px;
+        font-family: 'signikaregular';
+        line-height: 1.24;
+        padding-top: 0.89em;
+        padding-bottom: 1.07em;
+      }
+
+      p {
+        font-size: 17px;
+        font-family: 'open_sansregular';
+        line-height: 1.59;
+        padding-top: 1.59em;
+      }
+
+    }
+
+
+
+    p {
+      padding-top: 10px;
+    }
+  }
+
+  .col-3 + .col-3 {
+    margin-left: 37px;
+  }
 }
 
 .map {
   img {
     width: 100%;
   }
+}
+
+.contact {
+  padding: 145px 0;
+
+    &__title {
+    @include title;
+  }
+
+  &__btn {
+    @include btn-position;
+    
+    button {
+      @include btn-title;     
+    }
+
+    button + button {
+      margin-left: 5px;
+    }
+  }
+
+  &__form {
+    padding-top: 60px;
+    justify-content: center;
+    
+    form {
+      padding-left: 123px;
+    }
+    
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+         color: #fff;
+         opacity: 1; /* Firefox */
+         }
+
+       :-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color: #fff;
+         }
+
+       ::-ms-input-placeholder { /* Microsoft Edge */
+         color: #fff;
+         }
+    
+    .row {
+      padding-bottom: 50px;
+      width: 100%;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%); 
+    }
+
+    &-input,
+    &-textarea {
+      width: 50%;
+    }
+
+    input, textarea {
+      background-color: #140E1D;
+      background-clip: border-box;
+      width: 560px;
+      height: 72px;
+      line-height: 72px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-family: 'open_sansregular';
+      font-weight: 300;
+      padding-left: 25px;
+      -o-background-clip: border-box;
+         background-clip: border-box;
+    }
+
+    input + input {
+      margin-top: 30px;
+    }
+
+    textarea {
+      height: 176px;
+    }
+
+    [type=submit] {
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: 'open_sansregular';
+      font-size: 25px;
+      width: 200px;
+      padding: 0;
+      position: relative;
+      left: 48%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.color {
+  background-color: #02C5A5;
+}
+
+.address {
+  color: #fff;
+  font-family: 'open_sansregular';
+  font-size: 18px;
+  background-color: #00a388;
+  padding: 107px 0 120px;
+  line-height: 1.5;
+  
+  ul {
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+        li {
+          width: 24%;
+        }
+  }
+
+  .col-6__links{
+
+    position: relative;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+
+   a {
+    img {
+      border-radius: 50%;
+    }
+   }
+
+   a + a {
+     margin-left: 10px;
+   }
+  }
+
+}
+
+.ba-footer {
+  background-color: #140e1d;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+  font-family: 'signikaregular';
+  color: #fff;
+  text-transform: uppercase;
 }
